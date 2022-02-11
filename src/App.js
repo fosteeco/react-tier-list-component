@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CreateTierListContainer from "./components/CreateTierListContainer";
+import { useState } from "react";
+import initialData from "./initialData";
 
 function App() {
+  const [appState, setAppState] = useState(initialData);
+  const [genres, setGenres] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>React Tier List</h1>
+      <CreateTierListContainer appState={appState} setAppState={setAppState} />
     </div>
   );
 }

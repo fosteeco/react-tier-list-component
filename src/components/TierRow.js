@@ -9,7 +9,8 @@ const TierRowContainer = styled.div`
   min-width: 100px;
   margin: 10px 0;
   display: grid;
-  grid-template-columns: 60px 1fr;
+  ${(props) =>
+    props.row !== "row-tray" ? "grid-template-columns:  60px 1fr" : ""};
   align-items: center;
 `;
 
@@ -24,8 +25,8 @@ function TierRow(props) {
   const { letter, color, items, itemMap, row } = props;
 
   return (
-    <TierRowContainer>
-      <TierHeading letter={letter} color={color} />
+    <TierRowContainer row={row}>
+      {letter && color && <TierHeading letter={letter} color={color} />}
       <Droppable droppableId={row} direction="horizontal">
         {(provided, snapshot) => (
           <ItemsContainer

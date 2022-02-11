@@ -7,6 +7,15 @@ import initialData from "../initialData";
 import CreateTierItemContainer from "./CreateTierItemContainer";
 import styled from "styled-components";
 
+const TierRowContainer = styled.div`
+  background-color: #1a1a1a;
+  min-width: 100px;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: center;
+`;
+
 const FullScreenButton = styled.button`
   position: absolute;
   bottom: 0;
@@ -158,8 +167,13 @@ function CreateTierListContainer(props) {
           })}
           <FullScreenButton onClick={handleFullScreen}>[ ]</FullScreenButton>
         </TierListContainer>
+        <TierRow
+          key={"row-tray"}
+          row={"row-tray"}
+          items={appState.newDraft.rows["row-tray"].itemIds}
+          itemMap={appState.newDraft.items}
+        />
       </DragDropContext>
-      {/* <CreateTierItemContainer appState={appState} setAppState={setAppState} /> */}
     </>
   );
 }

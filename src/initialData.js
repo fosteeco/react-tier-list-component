@@ -48,6 +48,10 @@ const initialData = {
       color: "#ff7fff",
       itemIds: [],
     },
+    "row-tray": {
+      id: "row-tray",
+      itemIds: [],
+    },
   },
   rowOrder: ["row-1", "row-2", "row-3", "row-4", "row-5", "row-6", "row-7"],
 
@@ -99,6 +103,10 @@ const initialData = {
         id: "row-7",
         title: "F",
         color: "#ff7fff",
+        itemIds: [],
+      },
+      "row-tray": {
+        id: "row-tray",
         itemIds: [],
       },
     },
